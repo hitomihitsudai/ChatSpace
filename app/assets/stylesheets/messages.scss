@@ -1,3 +1,69 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	width: 100%;
+	height:100%;
+	display: block;
+}
+
+.notification {
+	background: #38AEF0;
+	width:100%;
+	color:#FFFFFF;
+	position-top: 0;
+	text-align: center;
+}
+
+.side-bar {
+  background: #2f3e51;
+  color:#FFFFFF;
+  width:300px;
+  height:500px;
+  padding: 0, 20px;
+  float:left;
+  display: block;
+
+p {
+	font-size: 16px;
+	font-style: Bold;
+	display: inline-block;
+	margin: 20px, 0;
+}
+
+
+  header {
+  	background: #253141;
+  	color:#FFFFFF;
+  	font-size:16px;
+  	height:100px;
+  	display:block;
+  }
+}
+.chat {
+
+	min-width: 300px;
+	width:100vw;
+	height:auto;
+	float:right;
+	float:fixed;
+	display: -webkit-flex;
+
+	header {
+		p {
+			font-weight: 35px;
+			font-size: 20px;
+			color:#333333;
+		}
+	}
+
+	.message {
+	background: #AAAAAA;
+	}
+		p{
+			color:#434A5A;
+		}
+		.form {
+			display: inline-block;
+			color:#FFFFFF;
+			background: #38AEF0;
+		}
+}
+
