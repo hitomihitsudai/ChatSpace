@@ -38,9 +38,7 @@ p {
   }
 }
 .chat {
-
-	min-width: 300px;
-	width:100vw;
+	width: calc( 100vw - 300px);
 	height:auto;
 	float:right;
 	float:fixed;
