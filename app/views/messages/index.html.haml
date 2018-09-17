@@ -1,8 +1,17 @@
 .notification
-	%div.p チャットグループが作成されました
+	%div.notice チャットグループが作成されました
+
 .side-bar
 	.header
-		%div.p masakikumiko
+		%h3.user_name masakikumiko
+		%ul.header_icons
+			%li.edit_user_groups
+				%i.fa.fa-pencil-square-o.icon
+
+
+
+			%li.sign_in
+				%i.fa.fa-cog.icon
 	.groups
 		%div.p アウトプット
 
@@ -12,5 +21,6 @@
 	.message
 		%div.p masakikumiko
 .form
-	%textarea
-	%form_botton send
+	%textbox
+	%i.fa.fa-picture-o.icon
+	%input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/

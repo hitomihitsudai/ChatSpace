@@ -7,9 +7,13 @@ body{
 .notification {
 	background: #38AEF0;
 	width:100%;
+	margin:0;
+	padding:0;
+
+	.notice {
 	color:#FFFFFF;
-	position-top: 0;
 	text-align: center;
+	}
 }
 
 .side-bar {
@@ -21,28 +25,36 @@ body{
   float:left;
   display: block;
 
-p {
-	font-size: 16px;
-	font-style: Bold;
-	display: inline-block;
-	margin: 20px, 0;
-}
-
-
   header {
   	background: #253141;
   	color:#FFFFFF;
   	font-size:16px;
   	height:100px;
-  	display:block;
-  }
+  	display:inline-block;
+
+	h3 {
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+	display: flex;
+	margin: 20px, 0;
+	}
+
+	.li.edit_user_groups {
+	display: -webkit-flex;
+	}
+
+
+	.li.sign_in {
+	display: -webkit-flex;
+	}
 }
+}
+
 .chat {
 	width: calc( 100vw - 300px);
 	height:auto;
 	float:right;
-	float:fixed;
-	display: -webkit-flex;
 
 	header {
 		p {
@@ -62,6 +74,9 @@ p {
 			display: inline-block;
 			color:#FFFFFF;
 			background: #38AEF0;
+		}
+		i.far.fa-imagez{
+
 		}
 }
 
