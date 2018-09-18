@@ -1,24 +1,81 @@
-# README
+Structure of DataBase
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## membersテーブル
 
-* Ruby version
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* System dependencies
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* Configuration
+## User
+### association
 
-* Database creation
+```
+has_many :prototypes, likes, comments
+```
 
-* Database initialization
+### table
+- name
+- email
+- password
+- avatar
+- profile
+- position
+- occupationa
 
-* How to run the test suite
+## Prototype
+### association
+a
+```
+has_many :captured_images, comments, likes
+belongs_to :user
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### table
+- title
+- catch_copy
+- concept
+- user_id
 
-* Deployment instructions
+## CapturedImage
+### association
 
-* ...
+```
+belongs_to :prototype
+```
+
+### table
+- content
+- status
+- prototype_id
+
+
+## Like
+### association
+
+```
+belongs_to :user, :prototype
+```
+
+### table
+- user_id
+- prototype_id
+
+
+
+## Comment
+### association
+
+```
+belongs_to :user, :prototype
+```
+
+### table
+- content
+- user_id
+- prototype_id
