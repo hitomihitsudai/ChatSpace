@@ -1,5 +1,27 @@
 Structure of DataBase
 
+## usersテーブル
+
+|Columname|Type|Options|
+|---------|----|-------|
+|user_id|integer|null: false|
+|Email|integer|null: false|
+|group_id|integer|null: false|
+|password|integer|null: false|
+
+### association
+- has_many :groups, images, messages
+
+
+## groupsテーブル
+
+|Columname|Type|Options|
+|---------|----|-------|
+|group_id|integer|null: false|
+|groups_name|text|null: false|
+
+### association
+- has_many :messages, members, users
 
 ## membersテーブル
 
@@ -8,74 +30,33 @@ Structure of DataBase
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
-### Association
+### association
 - belongs_to :group
 - belongs_to :user
 
-## User
+
+
+## imagesテーブル
+|Columname|Type|Options|
+|---------|----|-------|
+|content|varchar|null: false|
+|user_id|integer|null: false|
+
 ### association
+- belongs_to :message
+- belongs_to :user
 
-```
-has_many :prototypes, likes, comments
-```
 
-### table
-- name
-- email
-- password
-- avatar
-- profile
-- position
-- occupationa
+## messagesテーブル
 
-## Prototype
+|Columname|Type|Options|
+|---------|----|-------|
+|body|text|null: false|
+|image|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|created_at|timestamp|null: false|
+
 ### association
-a
-```
-has_many :captured_images, comments, likes
-belongs_to :user
-```
-
-### table
-- title
-- catch_copy
-- concept
-- user_id
-
-## CapturedImage
-### association
-
-```
-belongs_to :prototype
-```
-
-### table
-- content
-- status
-- prototype_id
-
-
-## Like
-### association
-
-```
-belongs_to :user, :prototype
-```
-
-### table
-- user_id
-- prototype_id
-
-
-
-## Comment
-### association
-
-```
-belongs_to :user, :prototype
-```
-
-### table
-- content
-- user_id
-- prototype_id
+- belongs_to :group
+- belongs_to :user
