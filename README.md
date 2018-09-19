@@ -4,31 +4,29 @@ Structure of DataBase
 
 |Columname|Type|Options|
 |---------|----|-------|
-|user_id|integer|null: false|
-|Email|integer|null: false|
-|group_id|integer|null: false|
-|password|integer|null: false|
+|name|varchar|null: false|
+|Email|varchar|null: false, UNIQUE KEY|
+|password|varchar|null: false|
 
 ### association
-- has_many :groups, images, messages
+- has_many :members, images, messages
 
 
 ## groupsテーブル
 
 |Columname|Type|Options|
 |---------|----|-------|
-|group_id|integer|null: false|
-|groups_name|text|null: false|
+|groups_name|text|null: false, index|
 
 ### association
-- has_many :messages, members, users
+- has_many :messages, members
 
 ## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true, index|
+|group_id|integer|null: false, foreign_key: true, index|
 
 ### association
 - belongs_to :group
@@ -40,18 +38,17 @@ Structure of DataBase
 |Columname|Type|Options|
 |---------|----|-------|
 |content|varchar|null: false|
-|user_id|integer|null: false|
+|message_id|integer|null: false|
 
 ### association
 - belongs_to :message
-- belongs_to :user
 
 
 ## messagesテーブル
 
 |Columname|Type|Options|
 |---------|----|-------|
-|body|text|null: false|
+|body|text|null: false, index|
 |image|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
@@ -60,3 +57,4 @@ Structure of DataBase
 ### association
 - belongs_to :group
 - belongs_to :user
+- has_many :images
