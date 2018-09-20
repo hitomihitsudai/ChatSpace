@@ -9,8 +9,8 @@ Structure of DataBase
 |password|varchar|null: false|
 
 ### association
-- has_many :members, images, messages
-
+- has_many :images, messages
+- has_many :members, through: :members
 
 ## groupsテーブル
 
@@ -19,7 +19,8 @@ Structure of DataBase
 |groups_name|text|null: false, index|
 
 ### association
-- has_many :messages, members
+- has_many :messages
+- has_many :members, through: :members
 
 ## membersテーブル
 
