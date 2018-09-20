@@ -2,32 +2,36 @@ Structure of DataBase
 
 ## usersテーブル
 
-|Columname|Type|Options|
+|Column|Type|Options|
 |---------|----|-------|
 |name|varchar|null: false|
-|Email|varchar|null: false, unique_key|
-|password|string|null: false|
+|email|varchar|null: false, unique: true|
+|encrypted_password|string|null: false|
 
 ### association
-- has_many :messages, groups, through: :members
 - has_many :members
+- has_many :messages
+- has_many :groups, through: :members
+
 
 ## groupsテーブル
 
-|Columname|Type|Options|
+|Column|Type|Options|
 |---------|----|-------|
-|name|text|null: false, index|
+|name|text|null: false, add_index :groups, :name|
 
 ### association
-- has_many :messages, users, through: :members
 - has_many :members
+- has_many :messages
+- has_many :users, through: :members
 
-## memberテーブル
+
+## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true, index|
-|group_id|integer|null: false, foreign_key: true, index|
+|user_id|integer|null: false, foreign_key: true, index: true|
+|group_id|integer|null: false, foreign_key: true, index: true|
 
 ### association
 - belongs_to :group
@@ -36,9 +40,9 @@ Structure of DataBase
 
 ## messagesテーブル
 
-|Columname|Type|Options|
+|Column|Type|Options|
 |---------|----|-------|
-|body|text|null: false, index|
+|body|text|null: false|
 |image|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
