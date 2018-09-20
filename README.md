@@ -42,9 +42,9 @@ Structure of DataBase
 
 |Column|Type|Options|
 |---------|----|-------|
-|body|text|null: false|
-|image|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|body|text||
+|image|string||
+|user_id|integer|null: false, foreign_key: true, index: true|
 |group_id|integer|null: false, foreign_key: true|
 |created_at|timestamp|null: false|
 
