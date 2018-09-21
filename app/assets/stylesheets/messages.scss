@@ -15,52 +15,54 @@ body{
 	color:#FFFFFF;
 	text-align: center;
 	}
-}
 
+}
 // 左側メニューバー
 .side-bar {
+    box-sizing: border-box;
+    width: 300px;
 	color:#FFFFFF;
-	width:300px;
- 	box-sizing: border-box;
 	float:left;
 	display: block;
+}
 
-	header {
+.right-header {
   		background: #253141;
   		height:100px;
   		line-height:100px;
-  		display: block;
   		padding: 0 20px;
-}
-	h3.user_name {
+
+	h3.header_name {
 		font-size: 16px;
 		font-weight: bold;
-		ådisplay: inline-block;
+		display: inline-block;
 	}
-	ul {
+	ul.header__lists {
 		list-style: none;
+		float:right;
 	}
-	li {
+	li.list {
 		text-align: -webkit-match-parent;
+		display: inline-block;
+		cursor: pointer;
+		display: flex;
 	}
-	// .header_icons {
-	// 	display: inline-block;
-	// 	float:right;
-	// 	cursor: pointer;
-	// 	display: flex;
-	// }
+}
 
-	.groups {
+.groups	{
 	  background: #2f3e51;
 	  height:calc(100vh-100px);
 	  padding:0 20px;
-	}
-	.group_name {
+}
+.group {
+		box-sizing: border-box;
+		padding: 20px 0 40px;
 		font-size: 15px;
-			p{
-			font-size: 11px;
 		}
-	}
+
+.group__message {
+		font-size: 11px;
+		}
 
 // 右側表示欄
 .chat {

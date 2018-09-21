@@ -2,23 +2,26 @@
 	%div.notice チャットグループが作成されました
 
 .side-bar
-	.header
-		%h3.user_name kumasaki
-		%ul.header_lists
-			%li.edit_user_groups
+	.right-header
+		%h3.header_name kumasaki
+		%ul.header__lists
+			%li.list
 				%i.fa.fa-pencil-square-o.icon
-
-			%li.sign_in
+			%li.list
 				%i.fa.fa-cog.icon
+
+
 	.groups
-		%div.group_1 aaaaaaaaa
-		.p まだメッセージはありません。
-		%div.group_2 sampleグループ
-		.p まだメッセージはありません。
+		%div.group aaaaaaaaa
+		%dic.group__message まだメッセージはありません。
+		%div.group sampleグループ
+		%div.group__message まだメッセージはありません。
 .chat
-	.header
-		%div.p sampleグループ
-		%div.member__name Member: kumasaki
+	.left-header
+		%div.left-header__title sampleグループ
+		%ul.left-header__members
+			%li.member: kumasaki
+	.right-header
 		%input.edit__submit{"data-disable-with" => "Edit", :name => "commit", :type => "submit", :value => "Edit"}/
 	.border
 	.message
@@ -39,6 +42,13 @@
 		%div.comment お腹すいた
 
 .form
-	%textbox type a message
-	%i.fa.fa-picture-o.icon
+	%form.class{:name => "js-form", id: "new_message"}
+	%input{:name => "utf8", :type => "hidden", :value => "✓"}/
+	%input{:name => "authenticity_token", :type => "hidden", :value => ""}/
+	%input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+	%class#form__mask
+	.form__mask
+		%label.form__mask__image{:for => "message_image"}
+		%i.fa.fa-picture-o.icon
+		/ %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
 	%input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
