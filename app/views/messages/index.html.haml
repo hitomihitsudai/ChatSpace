@@ -1,8 +1,9 @@
 .notification
 	%div.notice チャットグループが作成されました
 
+.wrapper
 .side-bar
-	.right-header
+	%header
 		%h3.header_name kumasaki
 		%ul.header__lists
 			%li.list
@@ -24,22 +25,23 @@
 	.right-header
 		%input.edit__submit{"data-disable-with" => "Edit", :name => "commit", :type => "submit", :value => "Edit"}/
 	.border
-	.message
-		%div.p kumasaki
-		%timestamp 2018/09/18 06:27:08
-		%div.comment なるほど
-	.message
-		%div.p kumasaki
-		%timestamp 2018/09/18 06:34:44
-		%div.comment 水色きれい
-	.message
-		%div.p kumasaki
-		%timestamp 2018/09/18 06:55:38
-		%div.comment command Enterで送信したい感ある
-	.message
-		%div.p kumasaki
-		%timestamp 2018/09/18 07:27:12
-		%div.comment お腹すいた
+	%div{:name => "messages_js-messages"}
+		.message
+			%div.p kumasaki
+			%timestamp 2018/09/18 06:27:08
+			%div.comment なるほど
+		.message
+			%div.p kumasaki
+			%timestamp 2018/09/18 06:34:44
+			%div.comment 水色きれい
+		.message
+			%div.p kumasaki
+			%timestamp 2018/09/18 06:55:38
+			%div.comment command Enterで送信したい感ある
+		.message
+			%div.p kumasaki
+			%timestamp 2018/09/18 07:27:12
+			%div.comment お腹すいた
 
 .form
 	%form.class{:name => "js-form", id: "new_message"}
