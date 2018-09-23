@@ -1,56 +1,56 @@
 .notification
-	%div.notice チャットグループが作成されました
-
+	.notice チャットグループが作成されました
 .wrapper
-.side-bar
-	%header
-		%h3.header_name kumasaki
-		%ul.header__lists
-			%li.list
-				%i.fa.fa-pencil-square-o.icon
-			%li.list
-				%i.fa.fa-cog.icon
+	.side-bar
+		.header
+			%h3.header_name kumasaki
+			%ul.header__lists
+				%li.list
+					%i.fa.fa-pencil-square-o.icon
+				%li.list
+					%i.fa.fa-cog.icon
 
 
-	.groups
-		%div.group aaaaaaaaa
-		%dic.group__message まだメッセージはありません。
-		%div.group sampleグループ
-		%div.group__message まだメッセージはありません。
-.chat
-	.left-header
-		%div.left-header__title sampleグループ
-		%ul.left-header__members
-			%li.member: kumasaki
-	.right-header
-		%input.edit__submit{"data-disable-with" => "Edit", :name => "commit", :type => "submit", :value => "Edit"}/
-	.border
-	%div{:name => "messages_js-messages"}
-		.message
-			%div.p kumasaki
-			%timestamp 2018/09/18 06:27:08
-			%div.comment なるほど
-		.message
-			%div.p kumasaki
-			%timestamp 2018/09/18 06:34:44
-			%div.comment 水色きれい
-		.message
-			%div.p kumasaki
-			%timestamp 2018/09/18 06:55:38
-			%div.comment command Enterで送信したい感ある
-		.message
-			%div.p kumasaki
-			%timestamp 2018/09/18 07:27:12
-			%div.comment お腹すいた
+		.groups
+			%div.group aaaaaaaaa
+			%dic.group__message まだメッセージはありません。
+			%div.group sampleグループ
+			%div.group__message まだメッセージはありません。
+	.chat
+		.header
+			.left-header
+				%div.left-header__title sampleグループ
+				%ul.left-header__members
+					%li.member: kumasaki
+			.right-header
+				%input.right-header__button{"data-disable-with" => "Edit", :name => "commit", :type => "submit", :value => "Edit"}/
+		.border
+		%div{:name => "messages_js-messages"}
+			.message
+				%div.p kumasaki
+				%timestamp 2018/09/18 06:27:08
+				%div.comment なるほど
+			.message
+				%div.p kumasaki
+				%timestamp 2018/09/18 06:34:44
+				%div.comment 水色きれい
+			.message
+				%div.p kumasaki
+				%timestamp 2018/09/18 06:55:38
+				%div.comment command Enterで送信したい感ある
+			.message
+				%div.p kumasaki
+				%timestamp 2018/09/18 07:27:12
+				%div.comment お腹すいた
 
-.form
-	%form.class{:name => "js-form", id: "new_message"}
-	%input{:name => "utf8", :type => "hidden", :value => "✓"}/
-	%input{:name => "authenticity_token", :type => "hidden", :value => ""}/
-	%input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-	%class#form__mask
-	.form__mask
-		%label.form__mask__image{:for => "message_image"}
-		%i.fa.fa-picture-o.icon
-		/ %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
-	%input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+	.form
+		%form.class{:name => "js-form", id: "new_message"}
+		%input{:name => "utf8", :type => "hidden", :value => "✓"}/
+		%input{:name => "authenticity_token", :type => "hidden", :value => ""}/
+		%input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+		%class#form__mask
+		.form__mask
+			%label.form__mask__image{:for => "message_image"}
+			%i.fa.fa-picture-o.icon
+			/ %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
+		%input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/

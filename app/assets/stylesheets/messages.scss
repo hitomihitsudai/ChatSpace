@@ -5,6 +5,10 @@
 
 
 .wrapper {
+	display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
 	display: flex;
 }
 
@@ -35,7 +39,7 @@ body{
 	float:left;
 	display: block;
 
-	header {
+	.header {
   		background: #253141;
   		height:100px;
   		line-height:100px;
@@ -79,30 +83,41 @@ body{
 	width: calc( 100vw - 300px);
 	float:right;
 
-	.left-header {
+	.header {
 		box-sizing: border-box;
     	height: 100px;
     	padding: 0 40px;
 
-	.left-header__title {
-			font-weight: 35px;
-			font-size: 20px;
-			color:#333333;
-}
-}
-	.right-header {
-		.edit__submit {
-			border: 1px solid #38AEF0;
-			color: #38AEF0;
-			background: #FFFFFF;
-			line-height: 40px;
-			height: 40px;
-			margin-top: 28px;
-			padding: 0 20px;
-			float: right;
-	}
-	}
+		.left-header {
 
+		.left-header__title {
+				margin-top: 35px;
+				font-size: 20px;
+				color: #333333;
+				}
+				ul.left-header__members {
+					display: flex;
+					color: #999999;
+					font-size: 12px;
+					margin-top: 15px;
+					}
+				}
+		.right-header {
+				border: 1px solid #38AEF0;
+				color: #38AEF0;
+				background: #FFFFFF;
+				line-height: 40px;
+				height: 40px;
+				margin-top: 28px;
+				padding: 0 20px;
+				float: right;
+
+				.right-header__button {
+					color: #38AEF0;
+					text-decoration: none;
+		}
+		}
+	}
 }
 // chat欄ボーダー
 .border {
