@@ -2,7 +2,11 @@
 //    -moz-box-sizing: border-box;
 //    box-sizing: border-box
 //   }
-
+body {
+	width: 100%;
+	height:100%;
+	display: block;
+}
 
 .wrapper {
 	display: -webkit-flex;
@@ -12,11 +16,7 @@
 	display: flex;
 }
 
-body{
-	width: 100%;
-	height:100%;
-	display: block;
-}
+
 // お知らせバー
 .notification {
 	background: #38AEF0;
@@ -36,11 +36,10 @@ body{
     box-sizing: border-box;
     width: 300px;
 	color:#FFFFFF;
-	float:left;
-	display: block;
 
-	.header {
-  		background: #253141;
+
+	header {
+  		background-color: #253141;
   		height:100px;
   		line-height:100px;
   		padding: 0 20px;
@@ -51,15 +50,16 @@ body{
 			display: inline-block;
 			}
 }
-		ul {
+		ul.header__lists {
 			display: inline-block;
 			float:right;
-			}
-		li {
-			text-align: -webkit-match-parent;
+
+			li.list {
 			display: inline-block;
 			cursor: pointer;
-			display: flex;
+			// display: flex;
+			// text-align: -webkit-match-parent;
+		}
 		}
 }
 
@@ -68,27 +68,31 @@ body{
 	height: calc( 100vh - 100px);
 	padding: 0 20px;
 
-.group {
+	.group {
 		box-sizing: border-box;
 		padding: 20px 0 40px;
-		font-size: 15px;
-		}
+		cursor: pointer;
 
-.group__message {
-		font-size: 11px;
+		a.title {
+			font-size: 15px;
+			display: block;
 		}
+		a.message {
+			font-size: 11px;
+		}
+}
 }
 // 右側表示欄
 .chat {
 	width: calc( 100vw - 300px);
-	float:right;
 
-	.header {
+	header {
 		box-sizing: border-box;
     	height: 100px;
     	padding: 0 40px;
 
-		.left-header {
+	.left-header {
+		float: left;
 
 		.left-header__title {
 				margin-top: 35px;
@@ -101,22 +105,28 @@ body{
 					font-size: 12px;
 					margin-top: 15px;
 					}
-				}
-		.right-header {
-				border: 1px solid #38AEF0;
-				color: #38AEF0;
-				background: #FFFFFF;
-				line-height: 40px;
-				height: 40px;
-				margin-top: 28px;
-				padding: 0 20px;
-				float: right;
+					li.left-header__member {
+						display: inline-block;
+						padding-right: 5px;
+					}
+	}
+	.right-header {
+			border: 1px solid #38AEF0;
+			color: #38AEF0;
+			background: #FFFFFF;
+			line-height: 40px;
+			height: 40px;
+			margin-top: 28px;
+			padding: 0 20px;
+			float: right;
 
-				.right-header__button {
+				a.right-header__submit {
 					color: #38AEF0;
 					text-decoration: none;
-		}
-		}
+					cursor: pointer;
+					// ボタンが右に寄ってない
+				}
+	}
 	}
 }
 // chat欄ボーダー
@@ -194,4 +204,8 @@ body{
 			margin-left:  15px;
 			padding : 0 30px;
 		}
+}
+
+a:-webkit-any-link {
+
 }

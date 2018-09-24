@@ -1,8 +1,9 @@
 .notification
-	.notice チャットグループが作成されました
+	%div.notice チャットグループが作成されました
+
 .wrapper
 	.side-bar
-		.header
+		%header
 			%h3.header_name kumasaki
 			%ul.header__lists
 				%li.list
@@ -12,18 +13,21 @@
 
 
 		.groups
-			%div.group aaaaaaaaa
-			%dic.group__message まだメッセージはありません。
-			%div.group sampleグループ
-			%div.group__message まだメッセージはありません。
+			.group
+				%a.title aaaaaaaaa
+				%a.message まだメッセージはありません。
+			.group
+				%a.title sampleグループ
+				%a.message まだメッセージはありません。
 	.chat
-		.header
+		%header
 			.left-header
 				%div.left-header__title sampleグループ
 				%ul.left-header__members
-					%li.member: kumasaki
+					%a Member
+					%li.left-header__member : kumasaki
 			.right-header
-				%input.right-header__button{"data-disable-with" => "Edit", :name => "commit", :type => "submit", :value => "Edit"}/
+				%a.right-header__submit Edit
 		.border
 		%div{:name => "messages_js-messages"}
 			.message
