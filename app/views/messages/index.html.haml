@@ -29,32 +29,37 @@
 			.right-header
 				%a.right-header__submit Edit
 		.border
-		%div{:name => "messages_js-messages"}
+		%div.messages
 			.message
-				%div.p kumasaki
-				%timestamp 2018/09/18 06:27:08
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 06:27:08
 				%div.comment なるほど
 			.message
-				%div.p kumasaki
-				%timestamp 2018/09/18 06:34:44
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 06:34:44
 				%div.comment 水色きれい
 			.message
-				%div.p kumasaki
-				%timestamp 2018/09/18 06:55:38
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 06:55:38
 				%div.comment command Enterで送信したい感ある
 			.message
-				%div.p kumasaki
-				%timestamp 2018/09/18 07:27:12
-				%div.comment お腹すいた
-
-	.form
-		%form.class{:name => "js-form", id: "new_message"}
-		%input{:name => "utf8", :type => "hidden", :value => "✓"}/
-		%input{:name => "authenticity_token", :type => "hidden", :value => ""}/
-		%input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-		%class#form__mask
-		.form__mask
-			%label.form__mask__image{:for => "message_image"}
-			%i.fa.fa-picture-o.icon
-			/ %input#message_image.hidden.js-file{:name => "message[image]", :type => "file"}/
-		%input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 08:27:12
+				%div.comment test
+			.message
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 09:11:42
+				%div.comment コメント
+			.message
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 11:00:32
+				%div.comment お昼
+		.form
+			%form.class{:name => "js-form", id: "new__message"}
+			%input{:name => "utf8", :type => "hidden", :value => "✓"}/
+			%input{:name => "authenticity_token", :type => "hidden", :value => ""}/
+			%input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+			.form__mask
+				%label.form__mask__image{:for => "message__image"}
+					%i.fa.fa-picture-o.icon
+			%input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
