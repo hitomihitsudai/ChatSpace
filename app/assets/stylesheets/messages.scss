@@ -15,7 +15,7 @@ body {
 
 // お知らせバー
 .notification {
-	background: $mainclolr;
+	background: #38AEF0;
 	width:100%;
 	margin:0;
 	padding:0;
@@ -106,7 +106,7 @@ body {
 		}
 		.right-header {
 				border: 1px solid #38AEF0;
-				color: $mainclolr;
+				color: #38AEF0;
 				background: #FFFFFF;
 				line-height: 40px;
 				height: 40px;
@@ -115,7 +115,7 @@ body {
 				float: right;
 
 					a.right-header__submit {
-						color: $mainclolr;
+						color: #38AEF0;
 						text-decoration: none;
 						cursor: pointer;
 					}
@@ -202,7 +202,7 @@ body {
 		}
 	.form__submit {
 			color:#FFFFFF;
-			background: $mainclolr;
+			background: #38AEF0;
 			border: none;
 			float: right;
 			font-size: 16px;
