@@ -1,18 +1,18 @@
-// * {-webkit-box-sizing: border-box;
-//    -moz-box-sizing: border-box;
-//    box-sizing: border-box
-//   }
-
-
-.wrapper {
-	display: flex;
-}
-
-body{
+body {
 	width: 100%;
 	height:100%;
 	display: block;
 }
+
+.wrapper {
+	display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+	display: flex;
+}
+
+
 // お知らせバー
 .notification {
 	background: #38AEF0;
@@ -32,11 +32,10 @@ body{
     box-sizing: border-box;
     width: 300px;
 	color:#FFFFFF;
-	float:left;
-	display: block;
+
 
 	header {
-  		background: #253141;
+  		background-color: #253141;
   		height:100px;
   		line-height:100px;
   		padding: 0 20px;
@@ -47,15 +46,14 @@ body{
 			display: inline-block;
 			}
 }
-		ul {
+		ul.header__lists {
 			display: inline-block;
 			float:right;
-			}
-		li {
-			text-align: -webkit-match-parent;
+
+			li.list {
 			display: inline-block;
 			cursor: pointer;
-			display: flex;
+		}
 		}
 }
 
@@ -64,54 +62,81 @@ body{
 	height: calc( 100vh - 100px);
 	padding: 0 20px;
 
-.group {
+	.group {
 		box-sizing: border-box;
 		padding: 20px 0 40px;
-		font-size: 15px;
-		}
+		cursor: pointer;
 
-.group__message {
-		font-size: 11px;
+		a.title {
+			font-size: 15px;
+			display: block;
 		}
+		a.message {
+			font-size: 11px;
+		}
+}
 }
 // 右側表示欄
 .chat {
-	width: calc( 100vw - 300px);
-	float:right;
+	width: calc(100vw - 300px);
 
-	.left-header {
+	header {
 		box-sizing: border-box;
     	height: 100px;
     	padding: 0 40px;
 
-	.left-header__title {
-			font-weight: 35px;
-			font-size: 20px;
-			color:#333333;
-}
-}
-	.right-header {
-		.edit__submit {
-			border: 1px solid #38AEF0;
-			color: #38AEF0;
-			background: #FFFFFF;
-			line-height: 40px;
-			height: 40px;
-			margin-top: 28px;
-			padding: 0 20px;
-			float: right;
-	}
-	}
+		.left-header {
+			float: left;
 
+			.left-header__title {
+					margin-top: 35px;
+					font-size: 20px;
+					color: #333333;
+					}
+					ul.left-header__members {
+						display: flex;
+						color: #999999;
+						font-size: 12px;
+						margin-top: 15px;
+						}
+						li.left-header__member {
+							display: inline-block;
+							padding-right: 5px;
+						}
+		}
+		.right-header {
+				border: 1px solid #38AEF0;
+				color: #38AEF0;
+				background: #FFFFFF;
+				line-height: 40px;
+				height: 40px;
+				margin-top: 28px;
+				padding: 0 20px;
+				float: right;
+
+					a.right-header__submit {
+						color: #38AEF0;
+						text-decoration: none;
+						cursor: pointer;
+					}
+		}
+		}
 }
 // chat欄ボーダー
 .border {
 	border: 1px solid #eeeeee;
 }
 // chat欄各メッセージ間隔
+.messages{
+	box-sizing: border-box;
+    height: calc(100vh - 100px - 90px);
+    overflow: scroll;
+    padding: 46px 40px 0;
+    background-color: #AAAAAA;
+}
 .chat.messages {
 	box-sizing: border-box;
-    height: calc(100vh-100px-90px);
+    height: calc(100vh - 100px - 90px);
     overflow: scroll;
     padding: 46px 40px 0;
     background-color: #AAAAAA;
@@ -119,37 +144,42 @@ body{
 }
 .message {
 	margin-bottom: 40px;
-
-	.name {
-	font-size: 16px;
-	font-weight: bold;
-	color:#434A54;
 }
-	.timestamp {
-	font-size: 12px;
-	color:#999999;
+.message__user {
+		font-size: 16px;
+		font-weight: bold;
+		color:#434A54;
+		display: flex;
+		padding-right: 10px;
+		float: left;
 }
-	.comment {
-	font-size: 14px;
+.message__date {
+		font-size: 12px;
+		color:#999999;
 }
+.comment {
+		font-size: 14px;
+		margin-top: 10px;
+		color:#434A54;
 }
 
 .form{
 	height:90px;
 	box-sizing: border-box;
 	padding: 20px 50px 20px 40px;
-	float:right;
 
-		.form__message.js-content{
+	.form__message.js-content{
 			border: none;
 			box-sizing: border-box;
 			float:left;
 			height: 50px;
 			padding: 0 10px;
-			width: calc(100%- 150px);
-		}
-		.form__mask {
-			background-color: #fff;
+			width: calc(100% - 150px);
+			font-size: 16px;
+			color: #434A54;
+	}
+	.form__mask {
+			background-color: #FFFFFF;
 			float:left;
 			height: 50px;
 			padding-right: 10px;
@@ -158,18 +188,19 @@ body{
 				font-size: 20px;
 				line-height: 50px;
 			}
-		}
-		.form__mask__image {
+	}
+	.form__mask__image {
 			font-size: 20px;
 			line-height: 50px;
-		}
+	}
 		i {
 			display: inline-block;
 			font: normal normal normal 14px/1 FontAwesome;
 			text-rendering: auto;
 			-webkit-font-smoothing: antialiased;
+			font-size: inherit;
 		}
-		.form__submit {
+	.form__submit {
 			color:#FFFFFF;
 			background: #38AEF0;
 			border: none;
@@ -178,5 +209,18 @@ body{
 			height: 50px;
 			margin-left:  15px;
 			padding : 0 30px;
-		}
+			float:right;
+	}
+}
+
+a:-webkit-any-link {
+
+}
+
+label {
+    cursor: default;
+}
+
+.fa-photo:before, .fa-image:before, .fa-picture-o:before {
+    content: "\f03e";
 }
