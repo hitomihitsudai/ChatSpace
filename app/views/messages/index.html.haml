@@ -1,0 +1,63 @@
+.notification
+	%div.notice チャットグループが作成されました
+
+.wrapper
+	.side-bar
+		%header
+			%h3.header_name kumasaki
+			%ul.header__lists
+				%li.list
+					%i.fa.fa-pencil-square-o.icon
+				%li.list
+					%i.fa.fa-cog.icon
+		.groups
+			.group
+				%a.title aaaaaaaaa
+				%a.message まだメッセージはありません。
+			.group
+				%a.title sampleグループ
+				%a.message まだメッセージはありません。
+	.chat
+		%header
+			.left-header
+				%div.left-header__title sampleグループ
+				%ul.left-header__members
+					%a Member
+					%li.left-header__member : kumasaki
+			.right-header
+				%a.right-header__submit Edit
+		.border
+		%div.messages
+			.message
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 06:27:08
+				%div.comment なるほど
+			.message
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 06:34:44
+				%div.comment 水色きれい
+			.message
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 06:55:38
+				%div.comment command Enterで送信したい感ある
+			.message
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 08:27:12
+				%div.comment test
+			.message
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 09:11:42
+				%div.comment コメント
+			.message
+				%div.message__user kumasaki
+				%div.message__date 2018/09/18 11:00:32
+				%div.comment お昼
+		.form
+			%form.class{:name => "js-form", id: "new__message"}
+			%input{:name => "utf8", :type => "hidden", :value => "✓"}/
+			%input{:name => "authenticity_token", :type => "hidden", :value => ""}/
+			%input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+			.form__mask
+				%label.form__mask__image{:for => "message__image"}
+					%i.fa.fa-picture-o.icon
+			%input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
