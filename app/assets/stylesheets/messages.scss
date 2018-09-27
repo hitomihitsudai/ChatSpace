@@ -82,7 +82,7 @@ body {
 
 	header {
 		box-sizing: border-box;
-    	height: 100px;
+		height: 100px;
     	padding: 0 40px;
 
 		.left-header {
@@ -129,18 +129,17 @@ body {
 // chat欄各メッセージ間隔
 .messages{
 	box-sizing: border-box;
-    height: calc(100vh - 100px - 90px);
-    overflow: scroll;
-    padding: 46px 40px 0;
-    background-color: #AAAAAA;
+	height: calc(100vh - 100px - 90px);
+	overflow: scroll;
+	padding: 46px 40px 0;
+	background-color: #AAAAAA;
 }
 .chat.messages {
 	box-sizing: border-box;
-    height: calc(100vh - 100px - 90px);
-    overflow: scroll;
-    padding: 46px 40px 0;
-    background-color: #AAAAAA;
-
+	height: calc(100vh - 100px - 90px);
+	overflow: scroll;
+	padding: 46px 40px 0;
+	background-color: #AAAAAA;
 }
 .message {
 	margin-bottom: 40px;
@@ -221,6 +220,8 @@ label {
     cursor: default;
 }
 
-.fa-photo:before, .fa-image:before, .fa-picture-o:before {
+.fa-photo:before,
+.fa-image:before,
+.fa-picture-o:before {
     content: "\f03e";
 }
