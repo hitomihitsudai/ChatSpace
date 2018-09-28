@@ -1,22 +1,5 @@
-.notification
-	%div.notice チャットグループが作成されました
-
 .wrapper
-	.side-bar
-		%header
-			%h3.header_name kumasaki
-			%ul.header__lists
-				%li.list
-					%i.fa.fa-pencil-square-o.icon
-				%li.list
-					%i.fa.fa-cog.icon
-		.groups
-			.group
-				%a.title aaaaaaaaa
-				%a.message まだメッセージはありません。
-			.group
-				%a.title sampleグループ
-				%a.message まだメッセージはありません。
+	= render :partial => 'devise/shared/side_bar.html'
 	.chat
 		%header
 			.left-header
