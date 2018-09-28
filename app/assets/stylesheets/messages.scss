@@ -6,9 +6,9 @@ body {
 
 .wrapper {
 	display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
 	display: flex;
 }
 
@@ -29,16 +29,16 @@ body {
 }
 // 左側メニューバー
 .side-bar {
-    box-sizing: border-box;
-    width: 300px;
+	box-sizing: border-box;
+	width: 300px;
 	color:#FFFFFF;
 
 
 	header {
-  		background-color: #253141;
-  		height:100px;
-  		line-height:100px;
-  		padding: 0 20px;
+		background-color: #253141;
+		height:100px;
+		line-height:100px;
+		padding: 0 20px;
 
 		h3 {
 			font-size: 16px;
@@ -83,7 +83,7 @@ body {
 	header {
 		box-sizing: border-box;
 		height: 100px;
-    	padding: 0 40px;
+		padding: 0 40px;
 
 		.left-header {
 			float: left;
@@ -223,5 +223,5 @@ label {
 .fa-photo:before,
 .fa-image:before,
 .fa-picture-o:before {
-    content: "\f03e";
+	content: "\f03e";
 }
