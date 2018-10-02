@@ -1,7 +1,7 @@
 .wrapper
 	= render :partial => 'devise/shared/side_bar.html'
 	.chat
-		%header
+		.header
 			.left-header
 				%div.left-header__title sampleグループ
 				%ul.left-header__members
@@ -12,9 +12,11 @@
 		.border
 		%div.messages
 			.message
-				%div.message__user kumasaki
-				%div.message__date 2018/09/18 06:27:08
-				%div.comment なるほど
+				.upper-message
+					%div.message__user kumasaki
+					%div.message__date 2018/09/18 06:27:08
+				.lower-message
+					%div.comment なるほど
 			.message
 				%div.message__user kumasaki
 				%div.message__date 2018/09/18 06:34:44
