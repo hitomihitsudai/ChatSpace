@@ -13,30 +13,34 @@
 		%div.messages
 			.message
 				.upper-message
-					%div.message__user kumasaki
-					%div.message__date 2018/09/18 06:27:08
+					.upper-message__user-name kumasaki
+					.upper-message__date 2018/09/18 06:27:08
 				.lower-message
-					%div.comment なるほど
+					.lower-message__content なるほど
 			.message
-				%div.message__user kumasaki
-				%div.message__date 2018/09/18 06:34:44
-				%div.comment 水色きれい
+				.upper-message
+					.upper-message__user-name kumasaki
+					.upper-message__date 2018/09/18 06:27:08
+				.lower-message
+					.lower-message__content ロビンさん2部出演希望
 			.message
-				%div.message__user kumasaki
-				%div.message__date 2018/09/18 06:55:38
-				%div.comment command Enterで送信したい感ある
+				.upper-message
+					.upper-message__user-name kumasaki
+					.upper-message__date 2018/09/18 06:27:08
+				.lower-message
+					.lower-message__content ロビン・フッド
 			.message
-				%div.message__user kumasaki
-				%div.message__date 2018/09/18 08:27:12
-				%div.comment test
+				.upper-message
+					.upper-message__user-name kumasaki
+					.upper-message__date 2018/09/18 06:27:08
+				.lower-message
+					.lower-message__content テスト
 			.message
-				%div.message__user kumasaki
-				%div.message__date 2018/09/18 09:11:42
-				%div.comment コメント
-			.message
-				%div.message__user kumasaki
-				%div.message__date 2018/09/18 11:00:32
-				%div.comment お昼
+				.upper-message
+					.upper-message__user-name kumasaki
+					.upper-message__date 2018/09/18 06:27:08
+				.lower-message
+					.lower-message__content お昼
 		.form
 			%form.class{:name => "js-form", id: "new__message"}
 			%input{:name => "utf8", :type => "hidden", :value => "✓"}/
