@@ -18,7 +18,6 @@
 			float:right;
 			li.list {
 			display: inline-block;
-			cursor: pointer;
 		}
 		.icon{
 			font-size: $side_header_font;
@@ -34,7 +33,6 @@
 	.group {
 		box-sizing: border-box;
 		padding: 20px 0 40px;
-		cursor: pointer;
 		&__name {
 			font-size: $side_group_name;
 			display: block;
