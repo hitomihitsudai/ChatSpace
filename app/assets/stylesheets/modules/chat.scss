@@ -69,12 +69,13 @@
 }
 
 .form{
-	background-color: #DDDDDD;
-	box-sizing: border-box;
-	height:90px;
-	padding: 20px 50px 20px 40px;
-	&__message {
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+ 	&__message {
 		border: none;
+		box-sizing: border-box;
 		float:left;
 		height: 50px;
 		padding: 0 10px;
@@ -85,13 +86,13 @@
 		float:left;
 		height: 50px;
 		padding-right: 10px;
-		&__image {
-			font-size: 20px;
-			line-height: 50px;
-		}
-		.hidden {
-			display: none;
-		}
+     &__image {
+        font-size: 20px;
+        line-height: 50px;
+     }
+    .hidden {
+        display: none;
+    }
 	}
 	&__submit {
 		background: $light_blue;
@@ -103,5 +104,5 @@
 		margin-left:  15px;
 		padding : 0 30px;
 		}
-	}
+}
 }
