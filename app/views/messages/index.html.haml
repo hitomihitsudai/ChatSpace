@@ -3,50 +3,22 @@
 	.chat
 		.header
 			.left-header
-				%div.left-header__title sampleグループ
+				%div.left-header__title
+					= @group.name
 				%ul.left-header__members
-					%a Member
-					%li.left-header__member : kumasaki
+					= "Member: "
+					%li.left-header__member
+						= @group.users.name
 			.right-header
 				%a.right-header__submit Edit
-		.border
+
 		%div.messages
-			.message
-				.upper-message
-					.upper-message__user-name kumasaki
-					.upper-message__date 2018/09/18 06:27:08
-				.lower-message
-					.lower-message__content なるほど
-			.message
-				.upper-message
-					.upper-message__user-name kumasaki
-					.upper-message__date 2018/09/18 06:27:08
-				.lower-message
-					.lower-message__content ロビンさん2部出演希望
-			.message
-				.upper-message
-					.upper-message__user-name kumasaki
-					.upper-message__date 2018/09/18 06:27:08
-				.lower-message
-					.lower-message__content ロビン・フッド
-			.message
-				.upper-message
-					.upper-message__user-name kumasaki
-					.upper-message__date 2018/09/18 06:27:08
-				.lower-message
-					.lower-message__content テスト
-			.message
-				.upper-message
-					.upper-message__user-name kumasaki
-					.upper-message__date 2018/09/18 06:27:08
-				.lower-message
-					.lower-message__content お昼
+			= render partial: 'message', collection: @messages
 		.form
-			%form.class{:name => "js-form", id: "new__message"}
-			%input{:name => "utf8", :type => "hidden", :value => "✓"}/
-			%input{:name => "authenticity_token", :type => "hidden", :value => ""}/
-			%input#message_content.form__message.js-content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-			.form__mask
-				%label.form__mask__image{:for => "message__image"}
-					%i.fa.fa-picture-o.icon
-			%input.form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+			= form_for [@group, @message] do |f|
+				= f.text_field :content, class: 'form__message', placeholder: 'type a message'
+				.form__mask
+					= f.label :image, class: 'form__mask__image' do
+						= fa_icon 'picture-o', class: 'icon'
+						= f.file_field :image, class: 'hidden'
+				= f.submit 'Send', class: 'form__submit'
