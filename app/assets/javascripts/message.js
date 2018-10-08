@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     var MessageImage = ``
     if (message.image){
-      MessageImage = `<img class = lower-message__image src = ${message.image.url}> `
+      MessageImage = `<img class="lower-message__image" src="${message.image}">`
     }
     var html = `<div class= message>
                   <div class= upper-message>
@@ -20,9 +20,9 @@ $(function(){
                       ${MessageImage}
                   </div>
                 </div>`
-
     return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
