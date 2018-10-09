@@ -11,7 +11,9 @@
 					= current_user.name
 
 			.right-header
-				%a.right-header__submit Edit
+				%a.right-header__submit
+					= "Edit"
+					/ = link_to edit_group_path
 
 		%div.messages
 			= render partial: 'message', collection: @messages
