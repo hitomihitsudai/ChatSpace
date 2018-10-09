@@ -41,9 +41,11 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html)
       $('.form__message').val('');
-
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, "first");
     })
+    .fail(function(){
+      alert('非同期通信に失敗しました');
+      })
 })
 })
 
