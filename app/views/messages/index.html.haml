@@ -12,8 +12,7 @@
 
 			.right-header
 				%a.right-header__submit
-					= "Edit"
-					/ = link_to edit_group_path
+					= link_to "Edit"
 
 		%div.messages
 			= render partial: 'message', collection: @messages
