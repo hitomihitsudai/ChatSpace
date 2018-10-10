@@ -58,3 +58,10 @@ $(function(){
 	})
 })
 
+
+$(function(){
+	$("#chat-group-users").on("click",".chat-group-user" ,function(){
+		var id = $(this).attr("id");
+		$(this).remove();
+	})
+})
