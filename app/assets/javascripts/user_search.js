@@ -19,7 +19,7 @@ $(function(){
 	      url: '/users',
 	      type: "GET",
 	      data: { keyword: input },
-	      dataType: 'json',
+	      dataType: 'json'
 	    })
 		.done(function(users) {
 			$('#user-search-result').empty();
@@ -41,7 +41,10 @@ $(function(){
     var html = `<div class='chat-group-user clearfix' id='chat-group-user-${user_id}'>
 					<input name='group[user_ids][]' type='hidden' value= ${user_id}>
 						<p class='chat-group-user__name'>${user_name}</p>
-							<a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+							<a class='user-search-remove
+							 chat-group-user__btn
+							 chat-group-user__btn--remove
+							 js-remove-btn'>削除</a>
 				</div>`
     return (html);
   }
@@ -49,9 +52,9 @@ $(function(){
 
 	$("#user-search-result").on("click",".chat-group-user__btn--add" ,function(){
 		var user_id = $(this).attr("data-user-id");
-		console.log(user_id)
 		var user_name = $(this).attr("data-user-name");
 		var html = appendUser(user_id, user_name);
 		$('#chat-group-users').append(html)
 	})
 })
+
