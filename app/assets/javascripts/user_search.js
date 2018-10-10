@@ -30,9 +30,19 @@ $(function(){
 				appendUser(user);
 			var html = appendUser(user);
 			$('#user-search-result').append(html)
+			$("#user-search-result").on("click","a",function(){
+			})
+			
 			});
 		 }
 	    })
+
+
+
+
+
+
+
 	    .fail(function() {
     		alert('ユーザー検索に失敗しました');
     	})
