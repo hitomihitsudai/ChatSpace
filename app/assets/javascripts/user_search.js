@@ -9,7 +9,7 @@ $(function(){
 						 data-user-id= ${user.id}
 						 data-user-name=${user.name}>追加</a>
 				</div>`
-    return (html);
+    return html;
   }
 
 	$("#user-search-field").on("keyup", function() {
@@ -23,19 +23,20 @@ $(function(){
 	    })
 		.done(function(users) {
 			$('#user-search-result').empty();
-				if (users.length !== 0) {
-					users.forEach(function(user){
+			if (users.length !== 0) {
+				users.forEach(function(user){
 					searchUser(user);
 					var html = searchUser(user);
 					$('#user-search-result').append(html)
 				});
-			 }
+			};
 	    })
 	    .fail(function() {
-    		alert('ユーザー検索に失敗しました');
-    	})
-})
-})
+			alert('ユーザー検索に失敗しました');
+		});
+	});
+});
+
 $(function(){
   function appendUser(user_id, user_name){
     var html = `<div class='chat-group-user clearfix' id='chat-group-user-${user_id}'>
@@ -46,7 +47,7 @@ $(function(){
 							 chat-group-user__btn--remove
 							 js-remove-btn'>削除</a>
 				</div>`
-    return (html);
+    return html;
   }
 
 
@@ -61,8 +62,7 @@ $(function(){
 
 
 $(function(){
-	$("#chat-group-users").on("click",".chat-group-user" ,function(){
-		var id = $(this).attr("id");
-		$(this).remove();
+	$("#chat-group-users").on("click",".user-search-remove" ,function(){
+		$(this).parent().remove();
 	})
 })
