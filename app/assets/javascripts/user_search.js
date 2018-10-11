@@ -14,7 +14,7 @@ $(function(){
 
 	$("#user-search-field").on("keyup", function() {
 	    var input = $("#user-search-field").val();
-	    var href = window.location.href + ''
+
 	    $.ajax({
 	      url: '/users',
 	      type: "GET",
