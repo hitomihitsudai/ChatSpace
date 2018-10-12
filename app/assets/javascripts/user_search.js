@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function() {
 $(function(){
   function searchUser(user){
 
@@ -65,4 +66,5 @@ $(function(){
 	$("#chat-group-users").on("click",".user-search-remove" ,function(){
 		$(this).parent().remove();
 	})
+})
 })

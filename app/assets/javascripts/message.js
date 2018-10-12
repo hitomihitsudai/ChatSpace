@@ -35,6 +35,7 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false,
+      timeout: 10000
     })
     .done(function(data){
       var html = buildHTML(data);
@@ -47,5 +48,3 @@ $(function(){
       })
 })
 })
-
-     // setInterval(countup, 5000);
