@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function() {
 $(function(){
   function buildHTML(message){
     var MessageImage = ``
@@ -46,5 +47,6 @@ $(function(){
     .fail(function(){
       alert('非同期通信に失敗しました');
       })
+})
 })
 })
