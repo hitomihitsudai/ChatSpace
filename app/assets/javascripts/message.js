@@ -73,8 +73,8 @@ $(function(){
     .fail(function(data){
       alert('メッセージ取得に失敗しました');
     });
-} else {
-  clearInterval(interval);
-}} , 5 * 1000 );
-})
+    } else {
+      clearInterval(interval);
+    }} , 5 * 1000 );
+  })
 })
