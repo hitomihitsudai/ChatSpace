@@ -58,7 +58,7 @@ $(function(){
         dataType: 'json',
       })
 
-    .done(function(data){
+    .done(function(new_messages){
       var id = $('.message').last().data('messageId');
       var chatHTML = '';
       data.forEach(function(message){
@@ -70,7 +70,7 @@ $(function(){
       $('.messages').append(chatHTML);
 
     })
-    .fail(function(data){
+    .fail(function(new_messages){
       alert('メッセージ取得に失敗しました');
     });
     } else {
