@@ -61,7 +61,7 @@ $(function(){
     .done(function(new_messages){
       var id = $('.message').last().data('messageId');
       var chatHTML = '';
-      data.forEach(function(message){
+      data.forEach(function(new_messages){
         if (message.id > id){
         chatHTML += buildHTML(message);
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, "first");
